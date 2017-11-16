@@ -1,0 +1,16 @@
+- var activeItem = 2;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner
+					h1.content__title Заказ пропуска
+					.text
+						p Для офрмления пропуска необходимо перейти на авторизованную страницу нашего партнёра VISITORCONTROL
+						br
+						.clear
+						a.button(href="#") Перейти в систему VisitorControl
+			//= include/sidebar
+		//= include/footer

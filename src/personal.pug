@@ -1,0 +1,43 @@
+- var activeItem = 5;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner 
+					h1.content__title Мои данные
+					.text
+						p
+							strong Организация: 
+							|Общество с ограниченной ответственностью «МОСГОРСТРОЙ»
+						p 
+							strong Адрес занимаемой площади: 
+							|Москва, ул. Усачёва, 35, стр.1, 5 этаж
+						p 
+							strong Занимаевая площадь: 
+							|542 м2
+						p: a(href="#") схема ханимаемой площади
+						p 
+							strong Ответственное лицо:
+							|Захаров Иван Константинович
+						p 
+							strong Городсткой телефон:
+							|+7 (495) 584-24-06
+						p 
+							strong ФАКС:
+							|+7 (495) 584-24-07
+						p 
+							strong Мобильный телефон:
+							|+7 (915) 025-03-63
+						p 
+							strong E-mail:
+							|mosgorstroy@gmail.com
+						br
+						br
+						p СКАЧАТЬ ФОРМУ ДЛЯ ИЗМЕНЕНИЯ ДАННЫХ (реквизиты, контакты, занимаемая площадь): Форму необходимо заполнить и распечанный
+						p экземпляр с печатью передать в АО «МНПО  «СПЕКТР»
+					.files
+						a.files__item.files__item--pdf(href="#") Скачать
+			//= include/sidebar
+		//= include/footer

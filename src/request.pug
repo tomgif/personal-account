@@ -1,0 +1,82 @@
+- var activeItem = 1;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner
+					h1.content__title Мои заявки
+					.control-group
+						span.control-group__title Показать
+						span.control-group__holder
+							label.control.control--checkbox
+								input(type="checkbox", checked="checked")
+								span.control__indicator
+								span.control__caption Активные
+							label.control.control--checkbox
+								input(type="checkbox", checked="checked")
+								span.control__indicator
+								span.control__caption Выполненные
+							label.control.control--checkbox
+								input(type="checkbox", checked="checked")
+								span.control__indicator
+								span.control__caption Отменённые
+							label.control.control--checkbox
+								input(type="checkbox", checked="checked")
+								span.control__indicator
+								span.control__caption Все
+					table.table.table--hover
+						thead
+							tr
+								td(style="width:15%") Дата заявки
+								td(style="width:14%") Номер заявки
+								td(style="width:14%") Статус заявки
+								td(style="width:45%") Краткое описание
+								td(style="width:12%") Отмена заявки
+						tbody
+							-var requests = [{date: '24.03.2017', num: '1011', status: 'На исполнении', info: 'Заправка картриджа лазерного принтера'}, {date: '15.03.2017', num: '0978', status: 'На исполнении', info: 'Не работает кондиционер'}, {date: '01.01.2017', num: '0001', status: 'Выполнена', info: 'Проблема с выходом из бизнес-центра.'}, {date: '31.12.2017', num: '2371', status: 'Отменена', info: 'Перемещение офисной мебели в другое помещение'}];
+							each request in requests
+								tr#request1011.js-detail
+									td=request.date
+									td=request.num
+									td=request.status
+									td=request.info
+									td: a(href="#"): include include/svg/remove-icon.svg
+							tr
+								each i in [1, 2, 3, 4, 5]
+									td
+					.clear
+					.request
+						.request__title Форма новой заявки
+						.request-form.clearfix
+							form(action="#", method="POST")
+								.request-form__left
+									.request-form__line
+										.request-form__title Направление заявки
+										select(name="category")
+											option(value="0") Информационные технологии
+											option(value="1") Эксплуатация объектов
+											option(value="2") Отдел снабжения
+									.request-form__line.inline-fix
+										.request-form__title Уведомление о статусе заявки
+										.clear
+										include include/svg/checkbox-icon.svg
+										input.form-control(type="text", name="phone", placeholder="+ 7 916 951 753 21")
+										.clear
+										include include/svg/checkbox-icon.svg
+										input.form-control(type="text", name="email", placeholder="sobaka@yandex.ru")
+								.request-form__right
+									.request-form__line
+										.request-form__title Имя заявителя
+										select(name="name")
+											option(value="0") Дмитрий
+											option(value="1") Роман
+											option(value="2") Павел
+									.request-form__line
+										textarea.form-control(name="message", placeholder="Текст заявки")
+								.clear
+									input.button.request-button(type="submit", value="Создать заявку")
+					.clear
+			//= include/sidebar
+		//= include/footer

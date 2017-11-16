@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'PFDinDisplayPro';
+    src: url(../fonts/PFDinDisplayPro-Regular.eot);
+    src: url(../fonts/PFDinDisplayPro-Regular.woff) format('woff'),
+        url(../fonts/PFDinDisplayPro-Regular.ttf) format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}

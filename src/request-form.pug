@@ -1,0 +1,17 @@
+.request-form.request-form--page
+	.request-form__title Заявка №3451
+	.request-form__content
+		form(action="#", method="POST")
+			table.table.table--simple.table--no-hover
+				tbody
+					- var table = [{title: 'Дата заявки', info: '15.03.2017'}, {title: 'Статус заявки', info: 'На исполнении'}, {title: 'Подробное описание проблемы', info: 'текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс  текст  текс  текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс текст  текс'}, {title: 'Планируемая дата завершения', info: '21.03.2017'}]
+					each item in table
+						tr
+							td(style="width: 27.5%")=item.title
+							td=item.info
+			.clear
+			p: strong Отмена текущей заявки
+			p: textarea(name="reason", placeholder="Причина отмены исполнения")
+			.clear
+			input.button.request-button(type="submit")
+			.clear

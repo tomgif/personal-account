@@ -1,0 +1,31 @@
+- var activeItem = 50;
+html(lang="ru")
+	//= include/head
+	body.page.page--login
+		.page__wrapper
+			.login-form
+				.login-form__caption Войти в личный кабинет арендатора
+				.login-form__inner
+					form(action="news.html")
+						.login-form__line
+							.login-form__cell
+								label.login-form__label#login Логин
+							.login-form__cell
+								input.form-control(type="text", placeholder="mosgorstroy@gmail.com")
+						.login-form__line
+							.login-form__cell
+								label.login-form__label#login Пароль
+							.login-form__cell
+								input.form-control(type="password", placeholder="********")
+						.login-form__line
+							.login-form__cell
+							.login-form__cell
+								.login-form__half
+									input.button(type="submit", value="Войти")
+								.login-form__half
+									label.control.control--checkbox
+										input(type="checkbox")
+										span.control__indicator
+										span.control__caption Запомнить пароль
+									.clear
+									a.login-form__forgot(href="#") Не помню пароль

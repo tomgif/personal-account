@@ -1,0 +1,63 @@
+- var activeItem = 4;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner
+					h1.content__title Справочные данные
+					.reference
+						.reference__column
+							.reference__title Администрация
+							.reference__content.text
+								p
+									strong Адрес: 
+									|Москва, ул. Усачева, д. 35, стр. 1
+									br
+									strong Тел.: 
+									|+7 (495) 411-99-00
+									br
+									strong Факс: 
+									|+7 (495) 933-06-56
+									br
+									strong E-mail: 
+									|MNPO@SPEKTR.RU
+						.reference__column
+							.reference__title Служба сервиса
+							.reference__content.text
+								p
+									strong Адрес: 
+									|Москва, ул. Усачева, д. 35, стр. 1
+									br
+									strong Тел.: 
+									|+7 (495) 411-99-00 (1339)
+									br
+									strong Факс: 
+									|+7 (495) 933-06-56
+									br
+									strong E-mail: 
+									|SERVIS@SPEKTR.RU
+					each line in [0,1,2,3,4,5]
+						p: br
+					.clear
+					.contact
+						.contact__title Форма обратной связи
+						.contact-form
+							form(action="#", method="POST")
+								.contact-form__left
+									.contact-form__line
+										label(for="name") Имя
+										input.form-control#name(type="text", placeholder="Информационные технологии")
+									.contact-form__line
+										label(for="phone") Телефон
+										input.form-control#phone(type="text", placeholder="+ 7 916 951 753 21")
+									.contact-form__line
+										label(for="email") Почта
+										input.form-control#email(type="email", placeholder="sobaka@yandex.ru")
+								.contact-form__right
+									.contact-form__line
+										textarea.form-control(name="message") Текст сообщения
+								.clear
+									input.button.right(type="submit", value="Отправить сообщение")
+			//= include/sidebar

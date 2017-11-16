@@ -1,0 +1,46 @@
+- var activeItem = 3;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner 
+					h1.content__title Показания счетчиков
+					table.table.table--no-hover
+						thead
+							tr
+								td Счетчики
+								td Услуга
+								td Ед. изм
+								td Дата передачи последних показаний
+								td Последние показания
+								td Текущие показания на 16.03.2017
+						tbody
+							-var meters = [{number: '101374651800', type: 'холодное В/С', unit: 'м3', date: '16.02.2017', info: 244}, {number: '18461935-14', type: 'электроснабжение', unit: 'кВт.ч', date: '16.02.2017', info: 2519}, {number: '18461937-12', type: 'электроснабжение', unit: 'кВт.ч', date: '16.02.2017', info: '2458'}];
+							each item in meters
+								tr
+									td=item.number
+									td=item.type
+									td=item.unit
+									td=item.date
+									td=item.info
+									td: input.form-control(type="text")
+					.clear
+					button.button.right Передать показания
+					.clear
+					.text
+						p: strong Показания ПУ необходимо передавать ежемесячно:
+						p По услуге ХОЛОДНОЕ В/С с 11 и по 21 число;
+						p По услуге ГОРЯЧЕЕ В/С3 с 11 и по 21 число;
+						p По услуге ЭЛЕКТРОСНАБЖЕНИЕ с 11 и по 21 число.
+						br
+						p Правила передачи показаний:
+						ol.num-list
+							li Значение текущего показания не может быть меньше значения предыдущего.
+							li Значение текущего показания не может быть отрицательным.
+							li Значение текущего показания не может быть нулевым.
+							li Расход между текущим и предыдущим значением показания счетчика не может превышать 1000.
+							li Значение текущего показания не может быть пустым.
+			//= include/sidebar
+		//= include/footer

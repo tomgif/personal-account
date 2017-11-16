@@ -1,0 +1,3 @@
+//= select
+//= fancybox
+//= partials/app

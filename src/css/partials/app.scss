@@ -1,0 +1,565 @@
+$mainColor: #e5ecf5;
+$additionalColor: #fff;
+$companyColor: #00328a;
+$textDefaultColor: #000;
+$borderDefaultColor: #000;
+$placeholderColor: #757575;
+
+*, *:before, *:after {
+	box-sizing: inherit}
+
+html {
+	box-sizing: border-box;
+	height: 100%}
+body {
+	margin: 0;
+	font-family: 'PFDinDisplayPro', sans-serif;
+	background-color: $mainColor}
+
+.header {
+	height: 9.3em;
+	padding-left: 15em;
+	background-color: $additionalColor;
+	border-bottom: 2px solid $additionalColor}
+
+.main-logo {
+	float: right;
+	width: 13em;
+	margin: 2em 4em;
+	img {max-width: 100%}
+}
+
+.page-title {
+	float: left;
+	margin: 1.75em 4em;
+
+	&__line {
+		color: #848484;
+		font-size: 1.8rem;
+		strong {
+			color: $companyColor;
+			font-size: 2.9rem}
+	}
+}
+
+.content {
+	padding-left: 15em;
+	&__inner {padding: 2em 4em}
+	&__title {
+		margin-top: 0;
+		text-transform: uppercase;
+		font-size: 2.4rem}
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 2em 0;
+
+	td {
+		padding: 1.5em 1.5em;
+		text-align: center;
+		font-size: 1.4rem;
+		border: 1px solid $borderDefaultColor;
+		&:first-child {border-left: 0}
+		&:last-child {border-right: 0}
+		svg {
+			fill: $companyColor;
+			width: 24px;
+			height: 24px}
+	}
+
+	tr {
+		&:hover {
+			background-color: $companyColor;
+			color: $additionalColor;
+			td {
+				border-left-color: $additionalColor;
+				border-right-color: $additionalColor}
+			svg {fill: $additionalColor}
+		}
+		&:last-child {
+			td {border-bottom: 0}
+			&:hover {
+				background: none;
+				color: $textDefaultColor;
+				td {
+					border-left-color: $borderDefaultColor;
+					border-right-color: $borderDefaultColor}
+			}
+		}
+	}
+
+	thead {
+		td {
+			border: 1px solid $borderDefaultColor;
+			text-transform: uppercase;
+			font-weight: bold}
+	}
+
+	&.table--simple {
+		td {
+			text-align: left;
+			&:first-child {
+				font-weight: bold;
+				text-transform: uppercase}
+		}
+
+		& tbody {
+			tr {
+				&:first-child {
+					td {border-top: 0}
+				}
+			}
+		}
+
+	}
+	&--no-hover {
+		tr {
+			&:hover {
+				background-color: transparent;
+				td {
+					color: $textDefaultColor;
+					border-color: $borderDefaultColor}
+			}
+		}
+	}
+}
+
+.text {
+	p, li {
+		font-size: 1.6rem
+	}
+}
+
+.sidebar {
+	width: 15em;
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 100%;
+	color: $additionalColor;
+	background-color: $companyColor;
+	&:before {
+		content: '';
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		border-left: 2px solid $additionalColor;
+		left: 3.25em}
+	&-header {
+		height: 9.3em;
+		border-bottom: 2px solid $additionalColor;
+		&__title {
+			width: 10.25em;
+			/* height: 5em; */
+			padding: 3em 2.5em;
+			display: inline-block;
+			vertical-align: middle;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $additionalColor;
+			//border-left: 2px solid $additionalColor;
+			span {font-size: 1.8rem}
+		}
+		svg {
+			fill: $additionalColor;
+			width: 2.25em;
+			height: 2.25em;
+			vertical-align: middle;
+			margin: 0 .5em}
+	}
+
+	&-menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		&__item {			
+			&.is-active, &:hover {
+				background-color: $mainColor;
+				span {
+					color: $companyColor;
+					border-left: 2px solid $companyColor;
+					em {color: $companyColor}
+				}
+
+				svg {fill: $companyColor}
+			}
+		}
+		&__link {
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $additionalColor;			
+			svg {
+				fill: $additionalColor;
+				width: 2.25em;
+				height: 2.25em;
+				vertical-align: middle;
+				margin: .5em}
+		}
+
+		&__title {
+			max-width: 75%;
+			font-size: 1.5rem;
+			padding: 1.75em 1.5em;
+			border-left: 2px solid $additionalColor;
+			display: inline-block;
+			vertical-align: middle;
+			em {
+				font-style: normal;
+				color: #eaff00}
+		}
+	}
+}
+
+.clear {clear: both}
+.inline-fix {letter-spacing: 0}
+.right {float: right}
+.left {float: left}
+
+.news {
+	&-item {
+		@include clearfix;
+		padding: 1.25em 0;
+		border-bottom: 1px solid #000;
+		&__image {
+			float: left;
+			width: 16%;
+			margin-right: 4%}
+		&__content {
+			float: left;
+			width: 80%}
+		&__date {
+			font-size: 1.6rem;
+			margin: 0 0 .625rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: $companyColor}
+		&__title {
+			color: #000;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+			text-decoration: none}
+		&__description {
+			font-size: 1.6rem;
+			text-align: justify;
+			p {margin: 0}
+		}
+		&__detail {float: right}
+	}
+}
+
+.form-control {
+	border: 2px solid $companyColor;
+	color: $textDefaultColor;
+	padding: .5em;
+	resize: none;
+	background-color: transparent;
+	font: normal 1.6rem 'PFDinDisplayPro', sans-serif;
+	&::-webkit-input-placeholder {color: $placeholderColor}
+	&::-moz-placeholder {color: $placeholderColor}
+	&:-ms-input-placeholder {color: $placeholderColor}
+	&:-moz-placeholder {color: $placeholderColor}
+}
+
+.request {
+	&-form {
+		&__left {
+			float: left;
+			width: 29%}
+		&__right {
+			margin-left: 2%;
+			float: left;
+			width: 69%;
+			.select {width: 50%}
+		}
+		&__title {
+			font-size: 1.6rem;
+			padding: .75em .5em;
+			text-transform: uppercase}
+		&__line {
+			width: 100%;
+			margin-bottom: 1em}
+		textarea {
+			width: 100%;
+			height: 8.125em;
+			padding: .625em;
+			background-color: $additionalColor}
+		input[type=text], input[type=email] {
+			float: left;
+			width: calc(100% - 2.5em);
+			padding: .5em;
+			margin-bottom: .3em;
+			&:last-child {margin-bottom: 0}
+		}
+		svg {
+			float: left;
+			width: 1.5em;
+			height: 1.5em;
+			margin: .25em .25em .5em .25em;
+			fill: $companyColor}
+
+		&--page {}
+		&--page & {
+			&__title {
+				padding: 40px;
+				font-size: 2.4rem;
+				color: $additionalColor;
+				text-transform: uppercase;
+				background-color: $companyColor}
+			&__content {
+				padding: 40px;
+				.table {
+					margin-top: 0}
+			}
+		}
+	}
+	&-button.button {
+		float: right;
+		padding: .65em 4em}
+}
+
+.button {
+	border: 2px solid $companyColor;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $additionalColor;
+	background-color: $companyColor;
+	font: normal 1.6rem 'PFDinDisplayPro', sans-serif;
+	padding: .65em 1em;
+	cursor: pointer;
+	&:hover {
+		color: $companyColor;
+		background-color: transparent}
+}
+
+@media all and (min-width: 1366px) {
+	html {font-size: 44.46614583333%}
+	body {font-size: 14.22916666666px}
+}
+
+@media all and (min-width: 1920px) {
+	html {font-size: 62.5%}
+	body {font-size: 20px}
+}
+
+/**
+* https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes
+*/
+.control {
+	position: relative;
+	padding-left: 1.75em;
+	margin-bottom: 1em;
+	cursor: pointer;
+	font-size: 1.6rem;
+
+	&-group {
+		&__title {
+			font-size: 1.6rem;
+			vertical-align: middle;
+			text-transform: uppercase}
+	}
+
+	input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0}
+	
+	&__indicator {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		background-color: transparent;
+		border: 2px solid $companyColor}
+	
+	&--radio .control__indicator,
+	&--checkbox .control__indicator {
+		border-radius: 50%}
+
+	&:hover input ~ &__indicator,
+	input:focus ~ &__indicator {
+		background-color: transparent}
+	
+	& input:checked ~ &__indicator {
+		background-color: transparent}
+	
+	&:hover input:not([disabled]):checked ~ &__indicator,
+	input:checked:focus ~ &__indicator {
+		background-color: transparent}
+	
+	input:disabled ~ .control__indicator {
+		background-color: $companyColor;
+		opacity: 0.6;
+		pointer-events: none}
+
+	&__indicator:after {
+		content: '';
+		position: absolute;
+		display: none}
+
+	input:checked ~ &__indicator:after {
+		display: block}
+
+	&--checkbox &__indicator:after,
+	&--radio &__indicator:after {
+		left: 4px;
+		top: 4px;
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background: $companyColor}
+
+	&--checkbox input:disabled ~ &__indicator:after,
+	&--radio input:disabled ~ &__indicator:after {
+		background: #7b7b7b}
+
+	&__caption {
+		text-transform: uppercase;
+		padding-left: 1em;
+		vertical-align: middle}
+}
+
+.request-form {
+	width: 60em}
+
+.page {
+	&--login {
+		background: url('../img/bg-min.jpg') center center / cover no-repeat fixed;
+		
+		.page__wrapper {
+			width: 960px;
+			margin: auto;
+		}
+	}
+}
+
+.login-form {
+	width: 26em;
+	margin: 15em auto;
+	background-color: $additionalColor;
+	color: $companyColor;
+
+	&__caption {
+		padding: 1.5em;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		background-color: $companyColor;
+		color: $additionalColor}
+	&__inner {
+		padding: 1.5em}
+	&__line {
+		font-family: monospace;
+		letter-spacing: -.65em;
+		margin-bottom: .6em;
+		margin-left: -1em;
+		margin-right: -1em}
+
+	&__cell {
+		font-family: 'PFDinDisplayPro', sans-serif;
+		letter-spacing: normal;
+		padding-left: 1em;
+		padding-right: 1em;
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+		&:first-child {
+			text-transform: uppercase;
+			width: 20%}
+		&:last-child {
+			width: 80%}
+	}
+
+	.form-control {
+		width: 100%}
+	.button {
+		padding: .5em}
+
+	&__half {
+		float: left;
+		width: 50%}
+
+	.control {
+		font-size: 1.4rem;
+		padding-left: 0;
+		&__caption {
+			text-transform: inherit;
+			padding-left: .5em}
+	}
+
+	.control--checkbox .control__indicator {
+		border-radius: 0;
+		&:after {
+			content: "\2713";
+			width: auto;
+			height: auto;
+			left: 2px;
+			top: -2px;
+			background: none;
+			font-size: 1.6rem}
+	}
+
+	&__forgot {
+		font-size: 1.4rem;
+		padding-left: 2em;
+		color: $companyColor}
+}
+
+.reference {
+	&__column {
+		float: left;
+		text-transform: uppercase;
+		margin-right: 1em;
+		strong {
+			font-weight: normal;
+			color: $companyColor}
+	}
+	&__title {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1.4rem}
+}
+
+.contact {
+	&__title {
+		margin: 1em 0;
+		text-transform: uppercase}
+	&-form {
+		&__left {
+			float: left;
+			margin-right: 2.5%;
+			width: 27.5%}
+		&__right {
+			float: left;
+			width: 70%}
+		&__line {
+			margin-bottom: .3em;
+			label {
+				font-size: 1.4rem;
+				text-transform: uppercase}
+		}
+		textarea {
+			width: 100%;
+			margin-top: 1em;
+			height: 10em;
+			background-color: $additionalColor}
+		input[type=text], input[type=email] {
+			width: 100%}
+	}
+}
+
+.files {
+	&__item {
+		display: inline-block;
+		width: 4em;
+		height: 5em;
+		padding-top: 5em;
+		background: url('../img/file-pdf.png') center center / cover no-repeat;
+		color: $companyColor;
+		font-size: 1.6rem;
+		text-decoration: none;
+		text-transform: uppercase}
+}

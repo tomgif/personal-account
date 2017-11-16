@@ -1,0 +1,41 @@
+{
+  "name": "tenant-account",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap-sass": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-connect": "*",
+    "gulp-imagemin": "*",
+    "gulp-minify-css": "*",
+    "gulp-plumber": "*",
+    "gulp-pug": "*",
+    "gulp-replace": "^0.6.1",
+    "gulp-rigger": "*",
+    "gulp-sass": "^3.1.0",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "imagemin-pngquant": "*",
+    "jquery": "*",
+    "rimraf": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bootstrap",
+    "less",
+    "gulp"
+  ],
+  "author": "tomgif",
+  "license": "ISC",
+  "repository": {},
+  "bugs": {},
+  "homepage": ""
+}

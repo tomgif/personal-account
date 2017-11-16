@@ -1,0 +1,32 @@
+- var activeItem = 0;
+html(lang="ru")
+	//= include/head
+	body.page
+		.page__wrapper
+			//= include/header
+			.content
+				section.content__inner
+					h1.content__title Информация
+					.news
+						.news-item.clearfix
+							.news-item__image
+								a(href="#"): img(src="http://placehold.it/192x100", alt="")
+							.news-item__content
+								.news-item__date 24 января 2017
+								a.news-item__title(href="#")
+									strong АО «МНПО «СПЕКТР» радо представить нового арендатора БЦ «Спектр Хамовники»!
+								.news-item__description.
+									В январе 2017 г. в БЦ «Спектр Хамовники» в здание по адресу Усачева д.35А въехал новый арендатор - Компания Dyson (Дайсон). Компания Dyson является мировым лидером в разработке инновационных бытовых продуктов. Глава компании, Джеймс Дайсон, английский инженер-изобретатель, в середине 80-х годов применил совершенно новую технологию фильтрации пыли в пылесосах. На сегодняшний день компания заслужила мировое признание благодаря своим пылесосам без мешка для сбора пыли, в которых применяется уникальная циклонная технология, а также климатической технике с запатентованной технологией Dyson Air Multiplier™, принципиально
+							.clear
+							a.news-item__detail.button(href="#") Подробнее
+						.news-item
+							.news-item__image
+								a(href="#"): img(src="http://placehold.it/192x100", alt="")
+							.news-item__content
+								.news-item__date 31 декабря 2016
+								a.news-item__title(href="#")
+									strong Поздравляем Вас С Новым 2017 Годом!
+							.clear
+							a.news-item__detail.button(href="#") Подробнее
+			//= include/sidebar
+		//= include/footer

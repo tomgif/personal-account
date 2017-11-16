@@ -1,0 +1,12 @@
+- var menu = [{url: 'news.html', title: 'Информация', icon: 'info'},{url: 'request.html', title: 'Мои заявки', icon: 'request'},{url: 'pass.html', title: 'Заказ пропуска', icon: 'pass'},{url: 'meters.html', title: 'Показания счетчиков', icon: 'meter'},{url: 'reference.html', title: 'Справочные данные', icon: 'reference'},{url: 'personal.html', title: 'Мои данные', icon: 'personal'},{url: '#', title: 'Выход', icon: 'logout'},{url: '#', title: 'Переход на основной сайт www.spektr-bc.ru', icon: 'planet'}];
+include include/sprite.svg
+.sidebar
+	.sidebar-header
+		svg: use(xlink:href="#icon-burger")
+		a.sidebar-header__title(href="/"): span Личный кабинет арендатора
+	ul.sidebar-menu
+		each item, i in menu
+			li.sidebar-menu__item(class=(i==activeItem ? 'is-active' : '')): a.sidebar-menu__link(href=item.url)
+				//img(src=item.icon, alt=item.title)
+				svg: use(xlink:href="#icon-" + item.icon)
+				span.sidebar-menu__title=item.title
